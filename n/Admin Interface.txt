@@ -1,0 +1,63 @@
+ng generate service crud
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+constructor(private http: HttpClient) {}
+
+private apiUrl = 'https://your-api-url.com/api';
+
+createItem(item: any): Observable<any> {
+  return this.http.post(${thisapiUrl}/items, item);
+}
+
+getItems(): Observable<any> {
+  return this.http.get(${this.apiUrl}/items);
+}
+
+updateItem(id: string, updatedItem: any): Observable<any> {
+  return this.http.put(${this.apiUrl}/items/${id}, updatedItem);
+}
+
+deleteItem(id: string): Observable<any> {
+  return this.http.delete(${this.apiUrl}/items/${id});
+}
+
+import { CrudService } from './crud.service';
+
+constructor(private crudService: CrudService) {}
+
+createItem(): void {
+  const newItem = {
+    name: 'New Item',
+    description: 'This is a new item.'
+  };
+
+  this.crudService.createItem(newItem).subscribe((response) => {
+    console.log('Item created:', response);
+  });
+}
+
+getItems(): void {
+  this.crudService.getItems().subscribe((items) => {
+    console.log('Items fetched:', items);
+  });
+}
+
+updateItem(id: string): void {
+  const updatedItem = {
+    name: 'Updated Item',
+    description: 'This is an updated item.'
+  };
+
+  this.crudService.updateItem(id, updatedItem).subscribe((response) => {
+    console.log('Item updated:', response);
+  });
+}
+
+deleteItem(id: string): void {
+  this.crudService.deleteItem(id).subscribe((response) => {
+    console.log('Item deleted:', response);
+  });
+}

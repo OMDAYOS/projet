@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center">The Sridge</h1>
+      <h3 class="text-center">Discover Our Courses</h3>
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Spring Boot / Angular</h5>
+            <p class="card-text">350 DT / Month</p>
+            <p class="card-text">39%</p>
+            <h2 class="card-text">$12.230</h2>
+            <p class="card-text">113</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Business Intelligence</h5>
+            <p class="card-text">350 DT / Month</p>
+            <p class="card-text">C</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Node JS / React</h5>
+            <p class="card-text">350 DT / Month</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">AI Artificial Intelligence</h5>
+            <p class="card-text">350 DT / Month</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Flutter</h5>
+            <p class="card-text">View More</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Flutter / Firebase</h5>
+            <p class="card-text">350 DT / Month</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">DEV Devops</h5>
+            <p class="card-text">350 DT / Month</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">OPS</h5>
+            <p class="card-text">350 DT / Month</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" [(ngModel)]="contactForm.name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" [(ngModel)]="contactForm.email" name="email" required>
+
+  <label for="message">Message:</label>
+  <textarea id="message" [(ngModel)]="contactForm.message" name="message" required></textarea>
+
+  <button type="submit">Send</button>
+</form>

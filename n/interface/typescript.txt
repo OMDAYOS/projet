@@ -1,0 +1,40 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { CoursesComponent } from './courses/courses.component';
+import { Component } from '@angular/core';
+import { ContactForm } from './contact-form.interface';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CoursesComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  contactForm: ContactForm = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  onSubmit() {
+    console.log('Name:', this.contactForm.name);
+    console.log('Email:', this.contactForm.email);
+    console.log('Message:', this.contactForm.message);
+  }
+}
